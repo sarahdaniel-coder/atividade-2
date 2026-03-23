@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteúdo principal */
+.conteudo {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #2311c7;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.secao {
+    background-color: rgb(75, 159, 228);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.secao h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.secao p {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.secao p:last-child {
+    margin-bottom: 0;
+}
+
+/* Rodapé fixo */
+.rodape {
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    padding: 40px 20px 20px;
+    width: 100%;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Estilos comuns para todas as seções do rodapé */
+.rodape-info h3,
+.rodape-links h3,
+.rodape-social h3,
+.rodape-copyright h3 {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Linha decorativa abaixo dos títulos */
+.rodape-info h3::after,
+.rodape-links h3::after,
+.rodape-social h3::after,
+.rodape-copyright h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #666;
+}
+
+/* Texto das seções */
+.rodape-info p {
+    color: #cccccc;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+/* Listas do rodapé */
+.rodape-links ul,
+.rodape-social ul {
+    list-style: none;
+}
+
+.rodape-links li,
+.rodape-social li {
+    margin-bottom: 8px;
+}
+
+/* Links do rodapé */
+.rodape-links a,
+.rodape-social a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.rodape-links a:hover,
+.rodape-social a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Seção de copyright */
+.rodape-copyright {
+    grid-column: span 4;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.rodape-copyright p {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.rodape-copyright p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .rodape-copyright {
+        grid-column: span 2;
+    }
+    
+    .secao {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .rodape-copyright {
+        grid-column: span 1;
+    }
+    
+    .rodape {
+        padding: 30px 15px 15px;
+    }
+}

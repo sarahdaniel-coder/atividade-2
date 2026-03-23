@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f7f0, #d4e6d4);
+    min-height: 100vh;
+}
+
+/* Menu de navegação */
+.menu {
+    background-color: #1a4d1a;  /* Verde escuro */
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 100, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #90ee90;
+}
+
+.menu-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-link {
+    color: white;  /* Texto branco */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+}
+
+/* Efeito hover - verde claro */
+.menu-link:hover {
+    background-color: #90ee90;  /* Verde claro */
+    color: #1a4d1a;  /* Verde escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(144, 238, 144, 0.6);
+    border-color: #1a4d1a;
+}
+
+/* Efeito de linha inferior */
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #90ee90;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.menu-link:hover::after {
+    width: 70%;
+}
+
+/* Conteúdo da página */
+.conteudo {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 100, 0, 0.2);
+    border: 3px solid #90ee90;
+}
+
+.conteudo h1 {
+    color: #1a4d1a;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-shadow: 0 2px 5px rgba(144, 238, 144, 0.5);
+}
+
+.conteudo p {
+    color: #2d6a2d;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Efeito ativo */
+.menu-link:active {
+    transform: scale(0.95);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-lista {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .menu-link {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    
+    .conteudo h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-lista {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .menu-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-link {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

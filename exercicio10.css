@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.caixa-bordas {
+    width: 500px;
+    height: 350px;
+    padding: 40px;
+    background-color: #0a0a0a;
+    
+    border-top: 6px solid red;
+    border-right: 6px dashed blue;
+    border-bottom: 6px dotted #00ff00;
+    border-left: 6px double #00ff00;
+    
+    box-shadow: 
+        0 0 20px red,
+        0 0 35px blue,
+        0 0 50px #00ff00;
+    
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    color: white;
+    cursor: pointer;
+}
+
+.caixa-bordas:active {
+    transform: scale(0.95);
+    box-shadow: 
+        0 0 40px red,
+        0 0 70px blue,
+        0 0 100px #00ff00,
+        inset 0 0 30px white;
+}
+
+@keyframes brilhoVermelho {
+    0%, 100% { text-shadow: 0 0 10px red, 0 0 20px red; }
+    50% { text-shadow: 0 0 20px red, 0 0 40px red; }
+}
+
+@keyframes brilhoAzul {
+    0%, 100% { text-shadow: 0 0 10px blue, 0 0 20px blue; }
+    50% { text-shadow: 0 0 20px blue, 0 0 40px blue; }
+}
+
+@keyframes brilhoVerde {
+    0%, 100% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
+    50% { text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; }
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    animation: brilhoVermelho 1.5s infinite;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: brilhoAzul 1.5s infinite;
+}
+
+.info-bordas {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.info-bordas p {
+    animation: brilhoVerde 1.5s infinite;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-bordas span {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.vermelho { 
+    background-color: red;
+    box-shadow: 0 0 15px red;
+}
+
+.azul { 
+    background-color: blue;
+    box-shadow: 0 0 15px blue;
+}
+
+.verde { 
+    background-color: #00ff00;
+    color: black;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+.roxo { 
+    background: linear-gradient(45deg, #ff00ff, #800080);
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #800080;
+}
+
+.legenda {
+    margin-top: 25px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    animation: brilhoVerde 1.5s infinite;
+    letter-spacing: 2px;
+}
+
+.titulo-principal {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: brilhoVermelho 1.5s infinite;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 20px red;
+}
+
+.info-bordas span:active {
+    transform: scale(0.9);
+    filter: brightness(1.5);
+}
+
+@media (max-width: 600px) {
+    .caixa-bordas {
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .titulo-principal {
+        font-size: 28px;
+    }
+}

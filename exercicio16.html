@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Interativo - Azul Ciano e Preto</title>
+    <link rel="stylesheet" href="exercicio16.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Botão Interativo ✨</h1>
+        <p>Passe o mouse para <strong>crescer</strong> e clique para <strong>mudar de cor</strong></p>
+        
+        <button class="botao-interativo" id="meuBotao">
+            <span class="texto-botao">Clique Aqui</span>
+            <span class="efeito-brilho"></span>
+        </button>
+        
+        <div class="info-cores">
+            <p>🎨 Azul Ciano | ⚫ Preto</p>
+        </div>
+    </div>
+
+    <script>
+        const botao = document.getElementById('meuBotao');
+        
+        botao.addEventListener('mousedown', function() {
+            this.classList.add('clicado');
+        });
+        
+        botao.addEventListener('mouseup', function() {
+            this.classList.remove('clicado');
+        });
+        
+        botao.addEventListener('mouseleave', function() {
+            this.classList.remove('clicado');
+        });
+    </script>
+</body>
+</html>

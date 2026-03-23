@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.container {
+    text-align: center;
+}
+
+/* Estilo do quadrado */
+.quadrado {
+    width: 150px;
+    height: 150px;
+    
+    /* Gradiente com roxo, azul e preto */
+    background: linear-gradient(45deg, #800080, #0000FF, #000000);
+    background-size: 200% 200%;
+    
+    /* Efeito de brilho suave */
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.3),
+                0 0 40px rgba(0, 0, 255, 0.2);
+    
+    /* Transição suave */
+    transition: all 0.5s ease-in-out;
+    
+    /* Cantos arredondados */
+    border-radius: 10px;
+    
+    /* Centralizar */
+    margin: 0 auto 20px;
+}
+
+/* Efeito hover - quadrado aumenta de tamanho */
+.quadrado:hover {
+    width: 250px;
+    height: 250px;
+    
+    /* Mudança no gradiente ao passar o mouse */
+    background: linear-gradient(45deg, #000000, #800080, #0000FF);
+    background-size: 200% 200%;
+    
+    /* Aumento do brilho */
+    box-shadow: 0 0 30px rgba(128, 0, 128, 0.5),
+                0 0 60px rgba(0, 0, 255, 0.4),
+                0 0 90px rgba(0, 0, 0, 0.6);
+    
+    /* Rotação sutil */
+    transform: rotate(5deg);
+    
+    /* Cantos mais arredondados */
+    border-radius: 20px;
+}
+
+/* Texto de instrução */
+.instrucao {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.quadrado:hover + .instrucao {
+    opacity: 1;
+    color: #800080;
+    text-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+}
+
+/* Animações adicionais para o gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.quadrado {
+    animation: gradientMove 5s ease infinite;
+}
+
+.quadrado:hover {
+    animation: gradientMove 2s ease infinite;
+}

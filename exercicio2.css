@@ -1,0 +1,15 @@
+h1{
+    font-family: poppins;
+    color: rgb(255, 217, 0);
+    text-align: center;
+    background-color: yellow;
+}
+
+h2{
+    font-family: poppins;
+    color:rgb(255, 217, 0);
+    text-align: center;
+}
+body{
+    background-color: rgb(240, 240, 127);
+}

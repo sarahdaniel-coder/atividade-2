@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Fundo com gradiente azul */
+.fundo-mar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #001f3f 0%, #0066cc 50%, #00aaff 100%);
+    z-index: -2;
+}
+
+/* Bolhas de ar */
+.bolha {
+    position: fixed;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: subir 8s infinite;
+    z-index: -1;
+}
+
+@keyframes subir {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
+}
+
+/* Peixes nadando */
+.peixe {
+    position: fixed;
+    font-size: 40px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+    animation: nadar linear infinite;
+    z-index: -1;
+    white-space: nowrap;
+}
+
+.peixe2::before {
+    content: "🐠";
+    font-size: 45px;
+}
+
+.peixe3::before {
+    content: "🐡";
+    font-size: 35px;
+}
+
+.peixe4::before {
+    content: "🐋";
+    font-size: 60px;
+    opacity: 0.7;
+}
+
+.peixe5::before {
+    content: "🦈";
+    font-size: 55px;
+    opacity: 0.5;
+}
+
+@keyframes nadar {
+    0% { transform: translateX(-200px) rotateY(0deg); }
+    100% { transform: translateX(calc(100vw + 200px)) rotateY(0deg); }
+}
+
+/* Peixes indo para esquerda (voltando) */
+.peixe-esquerda {
+    animation: nadarEsquerda linear infinite;
+}
+
+@keyframes nadarEsquerda {
+    0% { transform: translateX(calc(100vw + 200px)) rotateY(180deg); }
+    100% { transform: translateX(-200px) rotateY(180deg); }
+}
+
+/* Conteúdo da página */
+.conteudo {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+p {
+    font-size: 24px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    animation: flutuar 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 32px; }
+    p { font-size: 18px; }
+    .peixe { font-size: 30px; }
+    .peixe4::before { font-size: 45px; }
+    .peixe5::before { font-size: 40px; }
+}

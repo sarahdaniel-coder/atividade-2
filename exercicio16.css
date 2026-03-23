@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+h1 {
+    color: #00ffff;
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px #00ffff;
+    animation: brilhoTitulo 2s ease-in-out infinite;
+}
+
+@keyframes brilhoTitulo {
+    0%, 100% { text-shadow: 0 0 20px #00ffff; }
+    50% { text-shadow: 0 0 40px #00ffff, 0 0 60px #00ffff; }
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* Botão principal */
+.botao-interativo {
+    position: relative;
+    padding: 18px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    background-color: #000000;  /* Preto */
+    border: 3px solid #00ffff;    /* Azul ciano */
+    border-radius: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    
+    /* Efeito de brilho interno */
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Efeito HOVER - BOTÃO CRESCE */
+.botao-interativo:hover {
+    transform: scale(1.15);  /* Cresce 15% */
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+    border-width: 4px;
+    letter-spacing: 4px;
+}
+
+/* Efeito CLICK - MUDA DE COR */
+.botao-interativo.clicado {
+    background-color: #00ffff;  /* Azul ciano */
+    color: #000000;              /* Preto */
+    border-color: #000000;
+    transform: scale(0.95);      /* Leve redução ao clicar */
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.8);
+    text-shadow: none;
+}
+
+/* Efeito de brilho animado */
+.efeito-brilho {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.botao-interativo:hover .efeito-brilho {
+    left: 100%;
+}
+
+/* Texto do botão */
+.texto-botao {
+    position: relative;
+    z-index: 1;
+}
+
+/* Info de cores */
+.info-cores {
+    margin-top: 40px;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50px;
+    border: 2px solid #00ffff;
+}
+
+.info-cores p {
+    color: #00ffff;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+    animation: brilhoTexto 2s ease-in-out infinite;
+}
+
+@keyframes brilhoTexto {
+    0%, 100% { text-shadow: 0 0 10px #00ffff; }
+    50% { text-shadow: 0 0 20px #00ffff; }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .botao-interativo {
+        padding: 15px 35px;
+        font-size: 18px;
+    }
+    
+    .botao-interativo:hover {
+        transform: scale(1.1);
+    }
+}

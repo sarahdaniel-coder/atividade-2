@@ -1,0 +1,212 @@
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background: #0a0a0a;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                        0 0 0 2px #4169E1 inset,
+                        0 0 15px #4169E1;
+            border: 1px solid #4169E1;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px;
+            animation: borderGlow 3s infinite;
+        }
+
+        h2 {
+            color: #4169E1;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(65, 105, 225, 0.5);
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4169E1;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input {
+            width: 95%;
+            padding: 8px 12px;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4169E1;
+            box-shadow: 0 0 10px rgba(65, 105, 225, 0.5);
+            background: #222;
+        }
+
+        input::placeholder {
+            color: #666;
+            font-size: 13px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(45deg, #000, #4169E1);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #4169E1;
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.3);
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #4169E1, #000);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(65, 105, 225, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes borderGlow {
+            0% { box-shadow: 0 0 0 0 #4169E1, 0 0 0 2px #4169E1 inset; }
+            50% { box-shadow: 0 0 20px #4169E1, 0 0 0 2px #4169E1 inset; }
+            100% { box-shadow: 0 0 0 0 #4169E1, 0 0 0 2px #4169E1 inset; }
+        }
+
+        /* Efeito de destaque nos campos */
+        .form-group {
+            position: relative;
+        }
+
+        .form-group::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4169E1;
+            transition: width 0.3s ease;
+        }
+
+        .form-group:hover::after {
+            width: 100%;
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4169E1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3154b0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            form {
+                padding: 20px;
+                margin: 10px;
+                max-width: 100%;
+            }
+            
+            h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+            
+            input {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+            
+            label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST">
+        <h2>Cadastro</h2>
+        
+        <div class="form-group">
+            <label for="nome">NOME</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">E-MAIL</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="senha">SENHA</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+        </div>
+        
+        <button type="submit">ENVIAR</button>
+    </form>
